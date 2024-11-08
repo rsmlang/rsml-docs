@@ -32,29 +32,36 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Node
+
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: 1.1.21
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Install dependencies
-        run: npm ci # or pnpm install / yarn install / bun install
+        run: bun install
+
       - name: Build with VitePress
-        run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
+        run: bun run docs:build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
 
-  # Deployment job
+
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+  
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
+    
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
