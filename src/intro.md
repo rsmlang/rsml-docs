@@ -46,7 +46,7 @@ TextLabel {
 	FontFace = $Font,
 }
 
-TextInput {
+TextBox {
 	TextSize = $TextSize,
 	FontFace = $Font,
 }
