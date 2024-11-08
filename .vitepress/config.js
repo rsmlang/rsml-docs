@@ -9,7 +9,67 @@ export default {
     cleanUrls: true,
 
     markdown: {
-        languages: [ JSON.parse(fs.readFileSync('./rsmlang.json', 'utf8')) ]
+        languages: [ JSON.parse(fs.readFileSync('./rsml.tmLanguage.json', 'utf8')) ],
+        theme: {
+            "name": "VSCode Dark",
+            "settings": [
+                {
+                    "scope": ["comment", "comment.block"],
+                    "settings": {
+                        "foreground": "#6A9955"
+                    }
+                },
+
+                {
+                    "scope": ["string"],
+                    "settings": {
+                        "foreground": "#ce9178"
+                    }
+                },
+
+                {
+                    "scope": ["variable"],
+                    "settings": {
+                        "foreground": "#9CDCFE"
+                    }
+                },
+
+                {
+                    "scope": ["constant.numeric"],
+                    "settings": {
+                        "foreground": "#b5cea8"
+                    }
+                },
+
+                {
+                    "scope": ["support.class"],
+                    "settings": {
+                        "foreground": "#4EC9B0"
+                    }
+                },
+
+                {
+                    "scope": ["variable.other.constant"],
+                    "settings": {
+                        "foreground": "#4FC1FF"
+                    }
+                },
+
+                {
+                    "scope": ["keyword.control"],
+                    "settings": {
+                        "foreground": "#C586C0"
+                    }
+                },
+
+                {
+                    "scope": ["entity.name.tag.css"],
+                    "settings": {
+                        "foreground": "#D7BA7D"
+                    }
+                }
+            ]
+        }
     },
   
     themeConfig: {

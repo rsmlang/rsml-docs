@@ -1,5 +1,8 @@
 # Macros
 
+> [!CAUTION] 🚧 Under Construction
+> Macros are not available yet.
+
 Macros let you define a block of rsml markup which can be reused throughout your styles. They can be defined via the macro declaration:
 
 ```rsml
@@ -49,7 +52,7 @@ You can also optionally define the psuedo property with arguments. More than one
 ::: code-group
 ```rsml [Example]
 TextButton {
-    !MyAwesomeMacro = udim2 (50% + 100px, 50% + 50px),
+    !MyCoolMacro = udim2 (50% + 100px, 50% + 50px),
 }
 ```
 

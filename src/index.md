@@ -19,7 +19,7 @@ features:
   - title: Declarative
     details: Extremely simple and declarative syntax which lets you focus on the things that matter.
   - title: Version Control
-    details: Rsml files can be used with version control software as they can be saved to local file systems.
+    details: Rsml files can be saved to local filesystems and therefore can be used in workflows involving version control.
   - title: Rojo Support
     details: Built from the ground up to support Rojo for a seemless developer experience.
 ---

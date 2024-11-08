@@ -23,16 +23,49 @@ SomeProperty = [[
 ```
 
 ```rsml [Backticks]
-SomeProperty = `hello {"world"}`
+SomeProperty = `hello world`
 -- Please note that variables can't be used inside of interpolated strings.
 ```
 :::
+
+> [!CAUTION] 🚧 Under Construction
+> Only double quote strings are available at the moment.
 
 
 
 
 
 ## Colors
+
+There are multiple ways to define colors in rsml.
+
+### Hex Colors
+You can easily add hex codes into your style sheets via a `#` prefix:
+```rsml
+#C586C0
+```
+
+### Tailwind Colors
+
+Rsml has built-in syntax for adding [tailwind colors](https://tailwindcss.com/docs/customizing-colors) into your style sheets, for example:
+```rsml
+tw:fuchsia:200
+```
+
+### RGB
+
+Rgb colors can be defined as follows:
+```rsml
+rgb (255, 82, 24)
+```
+
+
+### Color3
+
+Color3 colors can be defined as follows:
+```rsml
+color3 (.8, .1, .3)
+```
 
 
 
@@ -72,6 +105,9 @@ As you can see offsets can only be added and subtracted from other offsets, the 
 ```
 :::
 
+> [!CAUTION] 🚧 Under Construction
+> Only `+` and `-` operations are functional at the moment.
+
 
 
 
@@ -99,5 +135,8 @@ Tuples can be given the following annotations:
 | font | [Font.fromId](https://create.roblox.com/docs/reference/engine/datatypes/Font#fromId) | (Number, Enum.FontWeight?, Enum.FontStyle?) | font (16658221428, SemiBold) |
 | rgb | [Color3](https://create.roblox.com/docs/reference/engine/datatypes/Font#fromId) | (Number, Enum.FontWeight?, Enum.FontStyle?) | font (16658221428, SemiBold) |
 
-
 A measurement, or a tuple with only one component which is a measurement, will be automatically inferred as a `udim`. This means you do not need to to wrap measurements with a udim tuple.
+
+
+> [!CAUTION] 🚧 Under Construction
+> the `rect`, `vec3`, `cframe`, `font` annotations aren't available yet, also measurements aren't automatically inferred as `udim`s yet.

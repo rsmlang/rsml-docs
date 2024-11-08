@@ -32,12 +32,12 @@ TextButton {}
 You can put selectors next to each other to avoid unnecessary nesting of rules:
 
 ::: code-group
-``` [After]
+```rsml [After]
 TextButton ::UICorner {
 
 }
 ```
-``` [Before]
+```rsml [Before]
 TextButton {
     ::UICorner {
 
@@ -45,6 +45,9 @@ TextButton {
 }
 ```
 :::
+
+> [!CAUTION] 🚧 Under Construction
+> This feature is still being developed and therefore is not available yet.
 
 
 
@@ -80,21 +83,33 @@ ImageButton ::UICorner {
 ```
 :::
 
+> [!CAUTION] 🚧 Under Construction
+> This feature is still being developed and therefore is not available yet.
+
 
 
 
 
 ## Selector Aliases
 
-In some situations you may want to merge two different rules with the same psuedo instance selector into one. This is mainly useful if you have a group of [macros](/docs/macros) which you want to use the same psuedo instance with.
+Normally you can target the same instance across multiple rules by using the same selector, however this is not the case with Psuedo Selectors as they create a new Instance instead of referencing an existing one. This makes it impossible to target the same Psuedo Instance from multiple macros (for example).
 
-An alias is an explicit opt-in to merge identical selectors into one consolidated rule. Rules with an identical selector and alias are merged.
+By giving rules with identical selectors the same alias you are explicitly opting-in to merge them into one consolidated [StyleRule](https://create.roblox.com/docs/reference/engine/classes/StyleRule) Instance.
 
-Aliases are scoped to the style sheet they are created in, meaning you cannot merge with rules from [derived](/docs/derives) style sheets. This does not apply to selectors returned from [macros](/docs/macros) however as they are considered part of the current style sheet.
+Aliases are scoped to the the parent rule or sheet they are defined in. This means you cannot merge with rules from [derived](/docs/derives) style sheets. This does not apply to aliases returned from [macros](/docs/macros) however as they are considered in scope to the parent rule or sheet they are embedded into.
+
+Selector Aliases are not just limited to Psuedo Selectors, however using them in this way will result in semantically identical styling. The only difference is that you will have one [StyleRule](https://create.roblox.com/docs/reference/engine/classes/StyleRule) instead of many.
 
 You may apply up to one alias per selector via a square bracket syntax:
-```
+```rsml
 ::UIPadding[myAlias] {}
 ```
 
-*(Whilst aliases are designed to be used with psuedo instance selectors there is nothing preventing them being used with other selectors, however other selectors which are identical are already automatically merged so theres no reason to do this).*
+> [!CAUTION] 🚧 Under Construction
+> This feature is still being developed and therefore is not available yet.
+
+
+
+
+
+

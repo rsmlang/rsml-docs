@@ -1,0 +1,238 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "rsml",
+
+	"foldingStartMarker": "{",
+	"foldingStopMarker": "}",
+
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#macros"
+		},
+		{
+			"include": "#declarations"
+		},
+		{
+			"include": "#selectors"
+		},
+		{
+			"include": "#tuples"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#colors"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#fields"
+		}
+	],
+	"repository": {
+
+
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block",
+					"begin": "\\-\\-\\[\\[",
+					"end": "\\]\\]"
+				},
+				{
+					"name": "comment",
+					"begin": "\\-\\-",
+					"end": "\n"
+				}
+			]
+		},
+
+		"macros": {
+			"patterns": [
+				{
+					"begin": "(@macro)[ \t]*([a-zA-Z0-9]+)[ \t]*\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control"
+						},
+						"2": {
+							"name": "entity.name.tag.css"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"match": "(@macro)[ \t]*([a-zA-Z0-9]+)",
+					"captures": {
+						"1": {
+							"name": "keyword.control"
+						},
+						"2": {
+							"name": "entity.name.tag.css"
+						}
+					}
+				}
+			]
+		},
+
+
+		"declarations": {
+			"name": "keyword.control",
+			"match": "@(derive|priority|macro)?"
+		},
+
+		
+		"selectors": {
+			"match": "(((::|:|#|.)?([^\n\t `+-/%^*\\(\\){}=]+)?[ \t]*,? +)+)[ \t]*{",
+			"captures": {
+				"1": {
+					"patterns": [
+						{
+							"match": "[^,]+",
+							"name": "entity.name.tag.css"
+						}
+					]
+				}
+			}
+		},
+
+
+		"tuples": {
+			"begin": "([a-zA-Z0-9]+)[ \t]*\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"patterns": [
+				{
+					"include": "$self"
+				}
+			]
+		},
+
+
+		"strings": {
+			"patterns": [
+				{
+					"name": "string",
+					"begin": "\\[\\[",
+					"end": "\\]\\]",
+					"patterns": [
+						{ 
+							"name": "constant.character.escape",
+                 			"match": "\\\\"
+            			}
+					]
+				},
+
+				
+				{
+					"name": "string",
+					"begin": "`",
+					"end": "`",
+					"patterns": [
+						{
+							"include": "#string_interpolated"
+						},
+						{
+							"include": "#string_escape"
+						}
+					]
+				},
+
+
+				{
+					"name": "string",
+					"match": "\"([^\n\"]*)\"?",
+					"captures": {
+						"1": {
+							"patterns": [
+								{ 
+									"name": "constant.character.escape",
+									"match": "\\\\"
+								}
+							]
+						}
+					}
+				},
+
+				{
+					"name": "string",
+					"match": "'([^\n\"]*)'?",
+					"captures": {
+						"1": {
+							"patterns": [
+								{ 
+									"name": "constant.character.escape",
+									"match": "\\\\"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		"string_interpolated": {
+     		"name": "meta.template.expression.luau",
+      		"begin": "\\{",
+      		"end": "\\}",
+      		"patterns": [
+        		{
+          			"include": "$self"
+        		}
+      		]
+		},
+
+
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\d+(px|%)?"
+				}
+			]
+		},
+
+
+		"colors": {
+			"patterns": [
+				{
+					"name": "string",
+					"match": "#[0-9a-fA-F]+"
+				},
+				{
+					"name": "string",
+					"match": "(tw:(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)(:(950|900|800|700|600|500|400|300|200|100|50))?)"
+				}
+			]
+		},
+		
+
+		"variables": {
+			"name": "variable.other.constant",
+			"match": "\\$[^\n\t +-/%^*\\(\\){}=]+"
+		},
+
+
+		"fields": {
+			"name": "variable.name",
+			"match": "[^\n\t +-/%^*\\(\\){}=]+"
+		}
+	},
+	"scopeName": "source.rsml"
+}
