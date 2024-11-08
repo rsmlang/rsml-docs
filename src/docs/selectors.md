@@ -90,7 +90,7 @@ In some situations you may want to merge two different rules with the same psued
 
 An alias is an explicit opt-in to merge identical selectors into one consolidated rule. Rules with an identical selector and alias are merged.
 
-Aliases are scoped to the style sheet they are created in, meaning you cannot merge with rules from [derived](/docs/derives) style sheets. This does not apply to selectors returned from [macros](docs/macros) however as they are considered part of the current style sheet.
+Aliases are scoped to the style sheet they are created in, meaning you cannot merge with rules from [derived](/docs/derives) style sheets. This does not apply to selectors returned from [macros](/docs/macros) however as they are considered part of the current style sheet.
 
 You may apply up to one alias per selector via a square bracket syntax:
 ```

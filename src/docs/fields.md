@@ -1,5 +1,5 @@
 # Fields
-Rsml has two main types of fields: `Properties` and `Variables`. (`Psuedo Properties` also exist which are documented [here](pseudo-properties)).
+Rsml has two main types of fields: `Properties` and `Variables`. (`Psuedo Properties` also exist which are documented [here](/docs/macros)).
 
 
 ## Properties
