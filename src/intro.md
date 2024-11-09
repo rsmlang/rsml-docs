@@ -102,7 +102,7 @@ Link.Parent = Gui;
 
 ## Sourcemaps
 
-By default Rojo omits all non-scripts from sourcemaps, so you will need to use the `--include-non-scripts` argument so that StyleSheet, StyleRule and StyleDerive Instance are included:
+By default Rojo omits all non-scripts from sourcemaps, so you will need to use the `--include-non-scripts` argument so that StyleSheet, StyleRule and StyleDerive Instances are included:
 
 ```
 rojo sourcemap --include-non-scripts
