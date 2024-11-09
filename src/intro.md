@@ -15,10 +15,9 @@ Currently The only way to use Rsml is via a forked Rojo server and plugin found 
 ## Example
 
 ::: code-group
-
-```rsml:line-numbers [styles.rsml]
-@derive "./globals.rsml"
-@derive "./macros.rsml"
+```rsml:line-numbers [Styles.rsml]
+@derive "./Globals.rsml"
+@derive "./Macros.rsml"
 
 TextButton {
 	Size = udim2 (auto - 15px + 1%, auto + 2% - 20px),
@@ -30,7 +29,7 @@ TextButton {
 }
 ```
 
-```rsml:line-numbers [globals.rsml]
+```rsml:line-numbers [Globals.rsml]
 $ColorAccent = #005AC5,
 $ColorTextTitle = tw:slate:50,
 $Font = font (16658221428, semibold),
@@ -52,8 +51,7 @@ TextBox {
 }
 ```
 
-
-```rsml:line-numbers [macros.rsml]
+```rsml:line-numbers [Macros.rsml]
 @macro HorizontalPadding (padding: udim = 0px) {
     ::UIPadding[paddingMacro] {
         PaddingLeft = $!padding,
@@ -75,4 +73,17 @@ TextBox {
 }
 ```
 
+```luau:line-numbers [Main.luau]
+local Styles = require(script.Parent.Styles);
+
+local Gui = Instance.new("ScreenGui");
+Gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui;
+
+local Btn = Instance.new("TextButton");
+Btn.Parent = Gui;
+
+local Link = Instance.new("StyleLink");
+Link.StyleSheet = Styles;
+Link.Parent = Gui;
+```
 :::

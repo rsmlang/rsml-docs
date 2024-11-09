@@ -1,5 +1,9 @@
 # Derives
 
+> [!CAUTION] 🚧 Under Construction
+> Deriving is not available yet.
+
+
 You are able to use another style sheet as a base for the current style sheet via a derive declaration:
 
 ```rsml

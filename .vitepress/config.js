@@ -9,7 +9,10 @@ export default {
     cleanUrls: true,
 
     markdown: {
-        languages: [ JSON.parse(fs.readFileSync('./rsml.tmLanguage.json', 'utf8')) ],
+        languages: [
+            JSON.parse(fs.readFileSync('./rsml.tmLanguage.json', 'utf8')),
+            JSON.parse(fs.readFileSync('./luau.tmLanguage.json', 'utf8'))
+        ],
         theme: {
             "name": "VSCode Dark",
             "settings": [
@@ -67,7 +70,22 @@ export default {
                     "settings": {
                         "foreground": "#D7BA7D"
                     }
-                }
+                },
+
+
+                {
+                    "scope": ["support.function", "entity.name.function.luau"],
+                    "settings": {
+                        "foreground": "#D8D7A3"
+                    }
+                },
+
+                {
+                    "scope": ["storage.modifier", "constant.language"],
+                    "settings": {
+                        "foreground": "#4191CB"
+                    }
+                },
             ]
         }
     },
