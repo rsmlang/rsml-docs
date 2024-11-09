@@ -3,12 +3,20 @@
 Rsml (Roblox Styling Markup Language) is a declarative styling language for the roblox ecosystem which is designed to be transpiled to instances that inherit from [StyleBase](https://create.roblox.com/docs/reference/engine/classes/StyleBase).
 
 
+
+
+
 ## Why Use Rsml?
 Unlike Roblox's Style instances, Rsml can be stored in local file systems which means it can be used in workflows involving version control. Developers who would prefer to write styles instead of relying on a visual based solution would benefit as well.
 
 
+
+
+
 ## Installation
 Currently The only way to use Rsml is via a forked Rojo server and plugin found here: https://github.com/rsmlang/rojo-rsml.
+
+
 
 
 
@@ -87,3 +95,15 @@ Link.StyleSheet = Styles;
 Link.Parent = Gui;
 ```
 :::
+
+
+
+
+
+## Sourcemaps
+
+By default Rojo omits all non-scripts from sourcemaps, so you will need to use the `--include-non-scripts` argument so that StyleSheet, StyleRule and StyleDerive Instance are included:
+
+```
+rojo sourcemap --include-non-scripts
+```
