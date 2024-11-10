@@ -5,6 +5,3 @@ TextButton {
     @priority 5
 }
 ```
-
-> [!CAUTION] 🚧 Under Construction
-> Priorities aren't available yet.

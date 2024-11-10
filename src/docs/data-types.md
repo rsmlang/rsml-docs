@@ -105,9 +105,6 @@ As you can see offsets can only be added and subtracted from other offsets, the 
 ```
 :::
 
-> [!CAUTION] 🚧 Under Construction
-> Only `+` and `-` operations are functional at the moment.
-
 
 
 
@@ -139,4 +136,4 @@ A measurement, or a tuple with only one component which is a measurement, will b
 
 
 > [!CAUTION] 🚧 Under Construction
-> the `rect`, `vec3`, `cframe`, `font` annotations aren't available yet, also measurements aren't automatically inferred as `udim`s yet.
+> the `rect`, `vec3`, `cframe`, `font` annotations aren't available yet.

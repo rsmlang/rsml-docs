@@ -23,7 +23,7 @@ Currently The only way to use Rsml is via a forked Rojo server and plugin found 
 ## Example
 
 ::: code-group
-```rsml:line-numbers [Styles.rsml]
+```rsml:line-numbers [./Styles.rsml]
 @derive "./Globals.rsml"
 @derive "./Macros.rsml"
 
@@ -37,7 +37,7 @@ TextButton {
 }
 ```
 
-```rsml:line-numbers [Globals.rsml]
+```rsml:line-numbers [./Globals.rsml]
 $ColorAccent = #005AC5,
 $ColorTextTitle = tw:slate:50,
 $Font = font (16658221428, semibold),
@@ -59,7 +59,7 @@ TextBox {
 }
 ```
 
-```rsml:line-numbers [Macros.rsml]
+```rsml:line-numbers [./Macros.rsml]
 @macro HorizontalPadding (padding: udim = 0px) {
     ::UIPadding[paddingMacro] {
         PaddingLeft = $!padding,
@@ -81,7 +81,7 @@ TextBox {
 }
 ```
 
-```luau:line-numbers [Main.luau]
+```luau:line-numbers [./Main.luau]
 local Styles = require(script.Parent.Styles);
 
 local Gui = Instance.new("ScreenGui");
