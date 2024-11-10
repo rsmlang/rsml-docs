@@ -19,16 +19,7 @@
 			"include": "#selectors"
 		},
 		{
-			"include": "#tuples"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#numbers"
-		},
-		{
-			"include": "#colors"
+			"include": "#data-types"
 		},
 		{
 			"include": "#variables"
@@ -38,6 +29,26 @@
 		}
 	],
 	"repository": {
+
+		"data-types": {
+			"patterns": [
+				{
+					"include": "#tuples"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#auto"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#colors"
+				}
+			]
+		},
 
 
 		"comments": {
@@ -70,7 +81,8 @@
 					},
 					"patterns": [
 						{
-							"include": "$self"
+							"match": "((.+)[;,]?)+",
+							"include": "#macro-arg"
 						}
 					]
 				},
@@ -86,6 +98,24 @@
 					}
 				}
 			]
+		},
+		"macro-arg": {
+			"match": "([a-zA-Z0-9]+)[\n\t ]*(?:\\:[\n\t ]*([a-zA-Z0-9]+)?)?[\n\t ]*(?:=[\n\t ]*(.+)[;,]?)?",
+			"captures": {
+				"1": {
+					"name": "variable.name"
+				},
+				"2": {
+					"name": "support.class"
+				},
+				"3": {
+					"patterns": [
+						{
+							"include": "#data-types"
+						}
+					]
+				}
+			}
 		},
 
 
@@ -196,6 +226,15 @@
           			"include": "$self"
         		}
       		]
+		},
+
+		"auto": {
+			"match": "(auto)[^A-Za-z0-9]",
+			"captures": {
+				"1": {
+					"name": "string"
+				}
+			}
 		},
 
 
