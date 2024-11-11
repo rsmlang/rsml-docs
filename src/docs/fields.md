@@ -2,9 +2,6 @@
 Rsml has two main types of fields: `Properties` and `Variables`. (`Psuedo Properties` also exist which are documented [here](/docs/macros)).
 
 
-> [!WARNING] Disclaimer
-> Currently all fields have to end with either a comma or a semi-colon, even the last field of a rule.
-
 ## Properties
 Property fields are used to define properties for instances. They can be assigned either a variable or a data type. They can be written as follows:
 
