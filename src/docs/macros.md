@@ -8,7 +8,7 @@ Macros let you define a block of rsml markup which can be reused throughout your
 ```rsml
 @macro MyCoolMacro {
     Size = udim2 (200px, 100px),
-    Position = udim2 (.5, .5),
+    Position = udim2 (.5, .5)
 }
 ```
 
@@ -19,7 +19,7 @@ Macros can be given arguments which can be referenced within said macro via a `$
     size: udim2 = udim2 (200px, 100px), 
 ) {
     Size = $!size,
-    Position = udim2 (.5, .5),
+    Position = udim2 (.5, .5)
 }
 ```
 
@@ -34,14 +34,14 @@ Psuedo properties are how macros are embedded into style sheets. A psuedo proper
 ::: code-group
 ```rsml [Example]
 TextButton {
-    !MyCoolMacro,
+    !MyCoolMacro
 }
 ```
 
 ```rsml [Evaluates To]
 TextButton {
     Size = udim2 (200px, 100px),
-    Position = udim2 (.5, .5),
+    Position = udim2 (.5, .5)
 }
 ```
 :::
@@ -52,14 +52,14 @@ You can also optionally define the psuedo property with arguments. More than one
 ::: code-group
 ```rsml [Example]
 TextButton {
-    !MyCoolMacro = udim2 (50% + 100px, 50% + 50px),
+    !MyCoolMacro = udim2 (50% + 100px, 50% + 50px)
 }
 ```
 
 ```rsml [Evaluates To]
 TextButton {
     Size = udim2 (50% + 100px, 50% + 50px),
-    Position = udim2 (.5, .5),
+    Position = udim2 (.5, .5)
 }
 ```
 :::
@@ -76,22 +76,22 @@ For example:
 
 ```rsml
 @macro Align ($align: "center") {
-    Position = udim2 (.5, 0),
+    Position = udim2 (.5, 0)
 }
 
 @macro Align ($align: "left") {
-    Position = udim2 (0, 0),
+    Position = udim2 (0, 0)
 }
 
 @macro Align ($align: "right") {
-    Position = udim2 (1, 0),
+    Position = udim2 (1, 0)
 }
 
 TextButton {
-    !Align = "left", -- Position will be `udim2 (0, 0)`.
+    !Align = "left" -- Position will be `udim2 (0, 0)`.
 }
 
 TextLabel {
-    !Align = "center", -- Position will be `udim2 (.5, 0)`.
+    !Align = "center" -- Position will be `udim2 (.5, 0)`.
 }
 ```
