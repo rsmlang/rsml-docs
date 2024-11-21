@@ -21,6 +21,6 @@ features:
   - title: Version Control
     details: Rsml files can be saved to local filesystems and therefore can be used in workflows involving version control.
   - title: Rojo Support
-    details: Built from the ground up to support Rojo for a seemless developer experience.
+    details: Built from the ground up to support Rojo for a seamless developer experience.
 ---
 
