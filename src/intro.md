@@ -22,6 +22,7 @@ Unlike Roblox's Style instances, Rsml can be stored in local file systems which 
 
 ## Installation
 Currently The only way to use Rsml is via a forked Rojo server and plugin found here: https://github.com/rsmlang/rojo-rsml.
+Rsml also has a vs code extension which provides syntax highlighting to .rsml files: https://github.com/rsmlang/rsml-vsc-ext.
 
 
 
