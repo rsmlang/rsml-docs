@@ -35,7 +35,8 @@ Currently The only way to use Rsml is via a forked Rojo server and plugin found 
 @derive "./Macros.rsml";
 
 TextButton {
-	Size = udim2 (auto - 15px + 1%, auto + 2% - 20px);
+	Size = udim2 (15px + 1%, 2% - 20px);
+	AutomaticSize = :XY;
 	BackgroundColor3 = $ColorAccent;
 	TextColor3 = $ColorTextTitle;
 	!HorizontalPadding = 14px;
