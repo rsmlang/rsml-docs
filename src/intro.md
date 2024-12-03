@@ -2,10 +2,21 @@
 
 Rsml (Roblox Styling Markup Language) is a declarative styling language for the roblox ecosystem which is designed to be transpiled to instances that inherit from [StyleBase](https://create.roblox.com/docs/reference/engine/classes/StyleBase).
 
-To enable the Roblox StyleSheet's feature you will need to set the following fflag:
+To enable the Roblox StyleSheet's feature you will need to set the following fflags:
 ```json
 {
-	"FFlagEnableStylingEverywhere": "true"
+	// Enables styling everywhere.
+	"FFlagEnableStylingEverywhere": "true",
+
+	// Enables the Style Editor plugin.
+	"FFlagEnableStyleEditor": "true",
+
+	// This changes how the EditTree Component works, and it’s required in order for the Style Editor plugin to work.
+	"FFlagDevFrameworkEditTreeItemIdSupport": "true",
+	
+	// Required so you can use `:ResetPropertyToDefault()` and `:IsPropertyModified()`.
+	"FFlagEnableModifiedPropertyLuaApis": "true"
+
 }
 ```
 
