@@ -52,6 +52,14 @@ Rsml has built-in syntax for adding [tailwind colors](https://tailwindcss.com/do
 tw:fuchsia:200
 ```
 
+### Css Colors
+
+Rsml has built-in syntax for adding css colors into your style sheets, for example:
+```rsml
+css:rebeccapurple
+```
+
+
 ### RGB
 
 Rgb colors can be defined as follows:
