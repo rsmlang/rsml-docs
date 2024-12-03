@@ -2,6 +2,13 @@
 
 Rsml (Roblox Styling Markup Language) is a declarative styling language for the roblox ecosystem which is designed to be transpiled to instances that inherit from [StyleBase](https://create.roblox.com/docs/reference/engine/classes/StyleBase).
 
+To enable the Roblox StyleSheet's feature you will need to set the following fflag:
+```json
+{
+	"FFlagEnableStylingEverywhere": "true"
+}
+```
+
 
 
 
@@ -24,59 +31,59 @@ Currently The only way to use Rsml is via a forked Rojo server and plugin found 
 
 ::: code-group
 ```rsml:line-numbers [./Styles.rsml]
-@derive "./Globals.rsml"
-@derive "./Macros.rsml"
+@derive "./Globals.rsml";
+@derive "./Macros.rsml";
 
 TextButton {
-	Size = udim2 (auto - 15px + 1%, auto + 2% - 20px),
-	BackgroundColor3 = $ColorAccent,
-	TextColor3 = $ColorTextTitle,
-	!HorizontalPadding = 14px,
-	!VerticalPadding = 10px,
+	Size = udim2 (auto - 15px + 1%, auto + 2% - 20px);
+	BackgroundColor3 = $ColorAccent;
+	TextColor3 = $ColorTextTitle;
+	!HorizontalPadding = 14px;
+	!VerticalPadding = 10px;
 	!CornerRadius = 100px
 }
 ```
 
 ```rsml:line-numbers [./Globals.rsml]
-$ColorAccent = #005AC5,
-$ColorTextTitle = tw:slate:50,
-$Font = font (16658221428, semibold),
-$TextSize = 14,
+$ColorAccent = #005AC5;
+$ColorTextTitle = tw:slate:50;
+$Font = font (16658221428, "SemiBold");
+$TextSize = 14;
 
 TextButton {
-	TextSize = $TextSize,
-	FontFace = $Font,
+	TextSize = $TextSize;
+	FontFace = $Font
 }
 
 TextLabel {
-	TextSize = $TextSize,
-	FontFace = $Font,
+	TextSize = $TextSize;
+	FontFace = $Font
 }
 
 TextBox {
-	TextSize = $TextSize,
-	FontFace = $Font,
+	TextSize = $TextSize;
+	FontFace = $Font
 }
 ```
 
 ```rsml:line-numbers [./Macros.rsml]
 @macro HorizontalPadding (padding: udim = 0px) {
     ::UIPadding {
-        PaddingLeft = $!padding,
-        PaddingRight = $!padding,
+        PaddingLeft = $!padding;
+        PaddingRight = $!padding
     }
 }
 
 @macro VerticalPadding (padding: udim = 0px) {
     ::UIPadding {
-        PaddingTop = $!padding,
-        PaddingBottom = $!padding,
+        PaddingTop = $!padding;
+        PaddingBottom = $!padding
     }
 }
 
 @macro CornerRadius (padding: udim = 0px) {
     ::UICorner {
-        CornerRadius = $!padding,
+        CornerRadius = $!padding
     }
 }
 ```
