@@ -128,12 +128,7 @@ Tuples can be given the following annotations:
 | rect | [Rect.new](https://create.roblox.com/docs/reference/engine/datatypes/Rect#new) | (Scale, Scale, Scale, Scale) | rect (10, 10, 10, 10) |
 | vec2 | [Vector2.new](https://create.roblox.com/docs/reference/engine/datatypes/Vector2#new) | (Scale, Scale) | vec2 (.5, .2) |
 | vec3 | [Vector3.new](https://create.roblox.com/docs/reference/engine/datatypes/Vector3#new) | (Scale, Scale, Scale) | vec3 (15, 12, 11) |
-| cframe | [CFrame.new](https://create.roblox.com/docs/reference/engine/datatypes/CFrame#new) | (Scale, Scale, Scale) | vec3 (15, 12, 11) |
-| font | [Font.fromId](https://create.roblox.com/docs/reference/engine/datatypes/Font#fromId) | (Number, Enum.FontWeight?, Enum.FontStyle?) | font (16658221428, SemiBold) |
+| font | [Font.fromId](https://create.roblox.com/docs/reference/engine/datatypes/Font#fromId) | (Number | String, "{Enum.FontStyle}"?, "{Enum.FontStyle}"?) | font (16658221428, "SemiBold") |
 | rgb | [Color3](https://create.roblox.com/docs/reference/engine/datatypes/Font#fromId) | (Number, Enum.FontWeight?, Enum.FontStyle?) | font (16658221428, SemiBold) |
 
 A measurement, or a tuple with only one component which is a measurement, will be automatically inferred as a `udim`. This means you do not need to to wrap measurements with a udim tuple.
-
-
-> [!CAUTION] 🚧 Under Construction
-> the `rect`, `vec3`, `cframe`, `font` annotations aren't available yet.

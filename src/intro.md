@@ -61,21 +61,21 @@ TextBox {
 
 ```rsml:line-numbers [./Macros.rsml]
 @macro HorizontalPadding (padding: udim = 0px) {
-    ::UIPadding[paddingMacro] {
+    ::UIPadding {
         PaddingLeft = $!padding,
         PaddingRight = $!padding,
     }
 }
 
 @macro VerticalPadding (padding: udim = 0px) {
-    ::UIPadding[paddingMacro] {
+    ::UIPadding {
         PaddingTop = $!padding,
         PaddingBottom = $!padding,
     }
 }
 
 @macro CornerRadius (padding: udim = 0px) {
-    ::UICorner[cornerRadiusMacro] {
+    ::UICorner {
         CornerRadius = $!padding,
     }
 }

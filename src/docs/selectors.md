@@ -46,9 +46,6 @@ TextButton {
 ```
 :::
 
-> [!CAUTION] 🚧 Under Construction
-> This feature is still being developed and therefore is not available yet.
-
 
 
 
@@ -60,56 +57,53 @@ You can apply the same rule to multiple selectors by using a comma separated lis
 ::: code-group
 ```rsml [After]
 TextButton, TextLabel, ImageButton ::UICorner {
-    Size = udim2 (.5, .5),
-    Position = udim2 (.5, .5),
+    Size = udim2 (.5, .5);
+    Position = udim2 (.5, .5)
 }
 ```
 
 ```rsml [Before]
 TextButton {
-    Size = udim2 (.5, .5),
-    Position = udim2 (.5, .5),
+    Size = udim2 (.5, .5);
+    Position = udim2 (.5, .5)
 }
 
 TextLabel {
-    Size = udim2 (.5, .5),
-    Position = udim2 (.5, .5),
+    Size = udim2 (.5, .5);
+    Position = udim2 (.5, .5)
 }
 
 ImageButton ::UICorner {
-    Size = udim2 (.5, .5),
-    Position = udim2 (.5, .5),
+    Size = udim2 (.5, .5);
+    Position = udim2 (.5, .5)
 }
 ```
 :::
 
-> [!CAUTION] 🚧 Under Construction
-> This feature is still being developed and therefore is not available yet.
 
+## Select Children And Descendants
 
+`>` can be used to select children, and `>>` can be used to select descendants.
 
-
-
-## Selector Aliases
-
-Normally you can target the same instance across multiple rules by using the same selector, however this is not the case with Psuedo Selectors as they create a new Instance instead of referencing an existing one. This makes it impossible to target the same Psuedo Instance from multiple macros (for example).
-
-By giving rules with identical selectors the same alias you are explicitly opting-in to merge them into one consolidated [StyleRule](https://create.roblox.com/docs/reference/engine/classes/StyleRule) Instance.
-
-Aliases are scoped to the the parent rule or sheet they are defined in. This means you cannot merge with rules from [derived](/docs/derives) style sheets. This does not apply to aliases returned from [macros](/docs/macros) however as they are considered in scope to the parent rule or sheet they are embedded into.
-
-Selector Aliases are not just limited to Psuedo Selectors, however using them in this way will result in semantically identical styling. The only difference is that you will have one [StyleRule](https://create.roblox.com/docs/reference/engine/classes/StyleRule) instead of many.
-
-You may apply up to one alias per selector via a square bracket syntax:
 ```rsml
-::UIPadding[myAlias] {}
+-- Selects all Instances with the class `TextLabel`
+-- that are children of `ImageButton` Instances.
+ImageButton > TextLabel {
+
+}
+
+-- Selects all Instances with the class `TextLabel`
+-- that are descendants of `ImageButton` Instances.
+ImageButton >> TextLabel {
+
+}
+
+#FooBar {
+    -- Selects all Instances called `Baz`
+    -- that are children of Instances called `FooBar`.
+    > #Baz {
+
+    }
+
+}
 ```
-
-> [!CAUTION] 🚧 Under Construction
-> This feature is still being developed and therefore is not available yet.
-
-
-
-
-
-
